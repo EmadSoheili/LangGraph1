@@ -18,7 +18,7 @@ def run_agent_reasoning(state: MessagesState) -> MessagesState:
 
     response = llm.invoke([{"role":"system", "content": SYSTEM_MESSAGE}, *state["messages"]])
 
-    return {"message": [response]}          # Append the AI message to the list of previous messages.
+    return {"messages": [response]}          # Append the AI message to the list of previous messages.
 
 
 # Define the tool node
