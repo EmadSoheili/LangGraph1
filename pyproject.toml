@@ -9,11 +9,10 @@ authors = [
 requires-python = ">=3.11"
 dependencies = [
     "black>=26.10.1",
-    "grandalf>=0.8",
     "isort>=9.0.2",
-    "langchain>=1.4.4",
+    "langchain>=1.4.5",
     "langchain-google-genai>=4.4.1",
-    "langgraph>=1.2.14",
+    "langgraph>=1.2.15",
     "python-dotenv>=1.2.4",
 ]
 
