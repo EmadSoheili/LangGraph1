@@ -1,10 +1,11 @@
 from dotenv import load_dotenv
+
 load_dotenv()  # Load environment variables from .env file
 
-from langchain_tavily import TavilySearch           # To search the internet
-from langchain_core.tools import (StructuredTool)           # Allow us to convert a python function into a tool that can be called by the LLM
-from langgraph.prebuilt import ToolNode         # Execute tools in a graph structure
-from schemas import (AnswerQuestion, RevisedAnswer)         # Import the Pydantic models for structured output
+from langchain_tavily import TavilySearch  # To search the internet
+from langchain_core.tools import (StructuredTool)  # Allow us to convert a python function into a tool that can be called by the LLM
+from langgraph.prebuilt import ToolNode  # Execute tools in a graph structure
+from schemas import (AnswerQuestion, RevisedAnswer)  # Import the Pydantic models for structured output
 
 tavily_tool = TavilySearch(max_results=5)  # Create a TavilySearch tool instance
 

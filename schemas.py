@@ -1,8 +1,5 @@
 from typing import List
-from pydantic import (
-    BaseModel,
-    Field,
-)  # Field is pydantic object to provide metadata inside a model.
+from pydantic import BaseModel, Field           # Field is pydantic object to provide metadata inside a model.
 
 
 # Class to define the structure of the reflection (critique)
@@ -19,19 +16,13 @@ class AnswerQuestion(BaseModel):
 
     answer: str = Field(description="~250 word detailed answer to the question.")
     reflection: Reflection = Field(description="Your reflection on the initial answer.")
-    # This is a trick to prompt the LLM through class description.
-    search_queries: List[str] = Field(
-        description="1-3 search queries for researching improvements to address the critique of your current answer."
-    )
+        # This is a trick to prompt the LLM through class description.
+    search_queries: List[str] = Field(description="1-3 search queries for researching improvements to address the critique of your current answer.")
 
 
 # Define a RevisedAnswer class that inherits from AnswerQuestion and adds a references field.
-class RevisedAnswer(
-    AnswerQuestion
-):  # Inherit from AnswerQuestion class to reuse the answer, reflection, and search_queries fields.
+class RevisedAnswer(AnswerQuestion):            # Inherit from AnswerQuestion class to reuse the answer, reflection, and search_queries fields.
     """Revise your original answer to your question."""
 
     # Add refrences field
-    references: List[str] = Field(
-        description="Citations motivating your updated answer."
-    )
+    references: List[str] = Field(description="Citations motivating your updated answer.")
