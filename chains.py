@@ -64,6 +64,7 @@ revisor = (actor_prompt_template.partial(first_instruction=revise_instructions)
            | llm.bind_tools(tools=[RevisedAnswer], tool_choice="RevisedAnswer"))       
         
 
+# This part is only for testing
 if __name__ == "__main__":
     human_message = HumanMessage(
         content="Write about AI-Powered SOC / autonomous soc  problem domain,"
